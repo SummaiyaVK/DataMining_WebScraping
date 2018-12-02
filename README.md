@@ -1,2 +1,1 @@
-# data-mining
-The code consists of initial phases of data extraction from e-commerce sites.
+#web scraping from e commerce websites
