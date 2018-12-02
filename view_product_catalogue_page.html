@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+.footer{
+
+position:fixed;
+left:0;
+bottom:0;
+width:100%;
+background-color:#474e5d;
+color:white;
+text-align:center;
+
+}
+
+
+.button{
+background-color:#818181;
+border:none;
+color:white;
+padding: 15px 32px;
+text-align:center;
+text-decoration:none;
+display:inline-block;
+font-size:16px;
+margin:4px 2px;
+cursor:pointer;
+
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0C2315;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+body {font-family: "Lato", sans-serif;}
+</style>
+</head>
+<body background="images/gito.jpg">
+
+<div class="sidebar">
+  <br> <br>  <br> <br>
+  <a href=create_recipe_page.html><i class="fa fa-pencil-square-o"></i>Create Recipe</a>
+  <br> <br>
+  <a href="#Execute Recipes"><i class="fa fa-caret-square-o-right"></i>   Execute Recipe</a>
+  <br> <br>
+  <a href="#product Catalogue"><i class="fa fa-book"></i>   product Catalogue</a>
+  <br> <br>
+  <a href="#View product catalogue"><i class="fa fa-eye"></i>   View product catalogue</a>
+  <br> <br>
+  <a href="#Download"><i class="fa fa-download"></i>   Download</a>
+  <br> <br>
+  <a href="#Mining status/LOG"><i class="fa fa-signal"></i>   Mining status/LOG</a>
+</div>
+
+<div class="main">
+
+
+<body bgcolor="#474e5d">    
+<div class="modal-content" >
+    <div class="container">
+    <center><h1>Product Catalogue.</h1></center>
+    <br><br>
+<table style="width:100%" BORDER="1" CELLSPACING="0" CELLPADDING="5" id="tab">
+ <!-- <tr><INPUT TYPE="checkbox" NAME="selected" value="product1">Select all</tr> -->
+<tr> <th> Select </th>
+	<th> Product </th>
+    <th> Recipe </th>
+    <th> Category </th>
+    <th> Sub-category </th>
+    <th> Brand </th>
+  </tr>
+
+  {% for i in return_value_fetch %}
+
+
+<tr>
+<td> <INPUT TYPE="checkbox" NAME="selected" value="{{i[0]}}"> </td>
+    <td>{{i[0]}}</td>
+    <td>{{i[1]}}</td>
+    <td>{{i[4]}}</td>
+    <td>{{i[5]}}</td>
+    <td> Br </td>
+</tr>
+
+{% endfor %}
+
+</table>
+    </div>
+</div>
+<div class="footer">
+<div class="button"><input type="button" value="Submit">
+</div>
+</div>
+</body>
+</html>
+

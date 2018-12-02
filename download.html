@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #ccccff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0C2315;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+	#tfnewsearch{
+		float:right;
+		padding:20px;
+	}
+	.tftextinput{
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		border:1px solid #0076a3; border-right:0px;
+		border-top-left-radius: 5px 5px;
+		border-bottom-left-radius: 5px 5px;
+	}
+	.tfbutton {
+		margin: 0;
+		padding: 5px 15px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:14px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		color: #ffffff;
+		border: solid 1px #0076a3; border-right:0px;
+		background: #0095cd;
+		background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+		background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+		border-top-right-radius: 5px 5px;
+		border-bottom-right-radius: 5px 5px;
+	}
+	.tfbutton:hover {
+		text-decoration: none;
+		background: #007ead;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+		background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	}
+	/* Fixes submit button height problem in Firefox */
+	.tfbutton::-moz-focus-inner {
+	  border: 0;
+	}
+	.tfclear{
+		clear:both;
+	}
+</style>
+
+<body bgcolor="#474e5d">
+<script type="text/javascript">
+checked=false;
+function checkedAll_1 (frm1) {var aa= document.getElementById('frm1'); if (checked == false)
+{
+checked = true
+}
+else
+{
+checked = false
+}for (var i =0; i < aa.elements.length; i++){ aa.elements[i].checked = checked;}
+}
+
+checked=false;
+function checkedAll_2 (frm2) {var aa= document.getElementById('frm2'); if (checked == false)
+{
+checked = true
+}
+else
+{
+checked = false
+}for (var i =0; i < aa.elements.length; i++){ aa.elements[i].checked = checked;}
+}
+</script>
+<div class="sidebar">
+  <br> <br>  <br> <br>
+  <a href="create_recipe_page.html" ><i class="fa fa-pencil-square-o"></i>Create Recipe</a>
+  <br> <br>
+  <a href="execute_recipe_page.html"><i class="fa fa-caret-square-o-right"></i>   Execute Recipe</a>
+  <br> <br>
+  <a href="#product Catalogue"><i class="fa fa-book"></i>   product Catalogue</a>
+  <br> <br>
+  <a href="#Mining status/LOG"><i class="fa fa-signal"></i>   Mining status/LOG</a>
+</div>
+<div class="main">  
+<div class="modal-content" >
+    <div class="container">
+    <br><br>
+	<form id="tfnewsearch" method="get" >
+	<input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+	</form>
+ 	<div class="tfclear"></div>
+
+<!-- ********************************for category************************************* -->
+<input type='checkbox' name='checkall' onclick='checkedAll_1(frm1);'> <b>select all</b> <h1> CATEGORY</h1>
+<form id ="frm1">
+<!--<input type="checkbox" name="chk1"> cat1 <br>
+<input type="checkbox" name="chk2"> cat2 <br>
+<input type="checkbox" name="chk3"> cat3 <br>
+<input type="checkbox" name="chk4"> cat4 <br>-->
+<table width="80%" BORDER="2"  CELLSPACING="2" CELLPADDING="5" id="tab">
+<col width="15%">
+<col width="85%">  
+  <tr>
+    <th> Select </th>
+    <th>Category</th>
+  </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Category 1</td>
+   </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Category 2</td>
+   </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Category 3</td>
+   </tr>
+        </table>
+<br>
+<br>
+<hr width="100%" align="left"> 
+
+<!-- ********************************for subcategory************************************* -->
+
+</form><input type='checkbox' name='checkall' onclick='checkedAll_2(frm2);'> <b>select all</b> <h1> SUB-CATEGORY</h1>
+<form id ="frm2">
+<!--<input type="checkbox" name="chk1"> cat1 <br>
+<input type="checkbox" name="chk2"> cat2 <br>
+<input type="checkbox" name="chk3"> cat3 <br>
+<input type="checkbox" name="chk4"> cat4 <br>-->
+
+
+<table width="80%" BORDER="2"  CELLSPACING="2" CELLPADDING="5" id="tab">
+<col width="15%">
+<col width="85%">  
+  <tr>
+    <th> Select </th>
+    <th> Sub-Category</th>
+  </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Sub-Category 1</td>
+   </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Sub-Category 2</td>
+   </tr>
+   <tr>
+	<td><input type="checkbox" name="selected" id="options"</td>
+        <td>Sub-Category 3</td>
+   </tr>
+        </table>
+</form>
+<br>
+<br>
+<hr width="100%" align="left"> 
+
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

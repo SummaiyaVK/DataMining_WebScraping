@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>e-commerce</title>
+</head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=tel],input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #0C2315;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+</style>
+<body bgcolor="#474e5d">
+<div class="modal-content" >
+    <div class="container">
+    <center><h1>Please fill in this form to create recipe.</h1></center>
+    <br><br>
+<form action="/result_create" method="post">
+  <b>Recipe name: </b><br>
+  <input type="text" name="recipename"><br>
+    <b>Main Page Url:</b><br>
+  <input type="text" name="page_main_url"><br>
+    <b>Current Page Url:</b><br>
+  <input type="text" name="page_url"><br>
+  <b>Main Element type:</b><br>
+ <input type="text" name="main_tag"><br>
+    <b>Main Class Name:</b><br>
+  <input type="text" name="main_class_name"><br>
+  <b>Sub Element type:</b><br>
+  <input type="text" name="sub_tag"><br>
+    <b>Sub Class Name:</b><br>
+  <input type="text" name="sub_class_name"><br>
+  <b>Title Element type:</b><br>
+  <input type="text" name="title_tag"><br>
+  <b>Title Class Name:</b><br>
+  <input type="text" name="title_class"><br>
+  <b>Product description Element type:</b><br>
+  <input type="text" name="pd_tag"><br>
+  <b>Product description Class Name:</b><br>
+  <input type="text" name="pd_class"><br>
+  <b>Image Element :</b><br>
+  <input type="text" name="img_ele"><br>
+  <b>Image Element type:</b><br>
+  <input type="text" name="img_ele_type"><br>
+  <b>Image Element name:</b><br>
+  <input type="text" name="img_ele_name"><br>
+  <b>Product specs Element type:</b><br>
+  <input type="text" name="ps_tag"><br>
+  <b>Product specs Class Name:</b><br>
+  <input type="text" name="ps_class"><br>
+  <b>Product specs Format:</b><br>
+  <select name="ps_format">
+  <option value="1">Table</option>
+  <option value="2">ul-li</option>
+</select><br><br>
+<b>Product specs Label Class:</b><br>
+<input type="text" name="ps_label_class"><br>
+<b>Product specs Value Class:</b><br>
+<input type="text" name="ps_form_class"><br>
+<b>Navigation Element type:</b><br>
+<input type="text" name="nav_tag"><br>
+<b>Navigation Class Name:</b><br>
+<input type="text" name="nav_tag_class"><br>
+<b>Image height:</b><br>
+<input type="text" name="op_height"><br>
+<b>Image width:</b><br>
+<input type="text" name="op_width"><br>
+ <b>Category:</b><br>
+<input type="text" name="category"><br>
+<b>Sub category:</b><br>
+<input type="text" name="sub_category"><br>
+<b>Dynamic class:</b><br>
+<input type="text" name="dynamic_class"><br>
+<input type="submit" value="CREATE RECIPE" > <!-- Keep at end -->
+</form>
+</div>
+</div>
+</body>
+</html>

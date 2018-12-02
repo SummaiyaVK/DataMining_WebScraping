@@ -1,0 +1,15 @@
+create table recipe(id bigint(20) primary key,recipe_name text,main_url text,url text,tag text,tag_class text,sub_tag text,sub_tag_class text,title_tag text,
+title_class text,pd_tag text,pd_class text,img_ele text,img_ele_type text,img_ele_name text,ps_tag text,ps_class text,ps_format text,ps_label_class text,ps_form_class text,nav_tag text,
+nav_tag_class text,op_height text,op_width text,category text,sub_category text, dynamic_class text);
+
+create table specification(id bigint(20) primary key,product_id bigint(20),specification_name text,specification_value mediumtext,created_at date);
+
+create table product(id bigint(20) primary key,source text,product_name text,product_overview text,category text,sub_category text,image_path text,sku tinytext,created_at date);
+
+ alter table specifiaction alter id set default 0;
+
+alter table product alter id set default 0;
+
+alter table specification add key(product_id);
+
+create table execute_recipe_log(id bigint(20) primary key default 0,recipe_id bigint(20),status text,executed_at text,completed_at text);

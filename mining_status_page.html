@@ -1,0 +1,56 @@
+<html>
+<style>
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+</style>
+<body bgcolor="#474e5d">
+<div class="modal-content" >
+    <div class="container">
+    <!--<center><h1>select one recipe to execute.</h1></center>-->
+    <br><br>
+<form action="/progress" method="get">
+<br><br>
+<table style="width:100%" BORDER="1" CELLSPACING="0" CELLPADDING="5">
+  <tr>
+    <th>Recipe Name</th>
+    <th>status</th>
+    <th>Mining started at</th>
+    <th>Mining completed at</th>
+    <th> PROGRESS </th>
+  </tr>
+   {% for i in return_value_fetch%}
+
+  <tr>
+    <td>{{i[5]}}</td>
+    <td>{{i[2]}}</td>
+    <td>{{i[3]}}</td>
+    <td>{{i[4]}}</td>
+    {% if i[2]=="in_progress" %}
+        <td><input type="submit" value="View Details"> </td>
+    {% else %}
+        <td>{{"NA"}}</td>
+    {% endif %}
+  </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</form>
+</body>
+</html>
